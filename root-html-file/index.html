@@ -7,7 +7,15 @@
     <title>Root application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="importmap-type" content="systemjs-importmap">
-    
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "angular-app": "http://localhost:4201/main.js",
+          "react-app": "http://localhost:4202/main.js",
+          "single-spa": "https://unpkg.com/single-spa@4.3.2/lib/system/single-spa.min.js"
+        }
+      }
+    </script>
     <link rel="preload" href="https://unpkg.com/single-spa@4.3.2/lib/system/single-spa.min.js" as="script" crossorigin="anonymous" />
     <script src="https://unpkg.com/zone.js"></script>
     <script src="https://unpkg.com/import-map-overrides@1.5.0/dist/import-map-overrides.js"></script>
@@ -17,6 +25,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/named-register.min.js"></script>
   </head>
   <body>
+    <script>
+      System.import('single-spa').then(function (singleSpa) {
 
+        singleSpa.registerApplication(
+          'angular-app',
+          () => System.import('angular-app'),
+          location => location.pathname.startsWith('/angular-app')
+        );
+
+        singleSpa.registerApplication(
+          'react-app',
+          () => System.import('react-app'),
+          location => location.pathname.startsWith('/react-app')
+        )
+
+        singleSpa.start();
+      })
+    </script>
   </body>
 </html>
