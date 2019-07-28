@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.4.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@svgr/webpack": "4.1.0",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
@@ -34,6 +35,7 @@
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.7.1",
     "jest-watch-typeahead": "0.3.0",
+    "lodash": "^4.17.15",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
@@ -51,19 +53,21 @@
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
+    "single-spa-react": "^2.10.2",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.3",
     "ts-pnp": "1.1.2",
     "url-loader": "1.1.2",
     "webpack": "4.29.6",
-    "webpack-dev-server": "3.2.1",
+    "webpack-dev-server": "^3.7.2",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "4.2.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "start:single-spa": "webpack-dev-server --config ./webpack.dev.js --port 4202"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -127,10 +131,16 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      "@babel/preset-env", "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import"
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.3.0"
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "webpack-cli": "^3.3.6"
   }
 }
