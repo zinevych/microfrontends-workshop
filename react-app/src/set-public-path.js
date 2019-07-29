@@ -2,8 +2,6 @@
 // basically webpack's internal module system always looks for code-splits (modules) at the root
 export default function setPublicPath() {
   return Promise.all([getUrl()]).then(values => {
-    console.log('-------------', webpackPublicPath);
-    console.log('-------------', values);
     
     const [url] = values
     const webpackPublicPath = url.slice(0, url.lastIndexOf('/') + 1)
