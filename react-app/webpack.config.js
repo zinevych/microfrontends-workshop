@@ -28,21 +28,21 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[path][name]__[local]',
-            },
+            // options: {
+            //   modules: true,
+            //   localIdentName: '[path][name]__[local]',
+            // },
           },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins() {
-                return [
-                  require('autoprefixer')
-                ];
-              },
-            },
-          },
+          // {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     plugins() {
+          //       return [
+          //         require('autoprefixer')
+          //       ];
+          //     },
+          //   },
+          // },
         ],
       },
       {

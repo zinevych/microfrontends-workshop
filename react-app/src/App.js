@@ -1,5 +1,6 @@
 import React from 'react';
 import Cats from './Cats';
+import './index.css';
 
 function App() {
 
