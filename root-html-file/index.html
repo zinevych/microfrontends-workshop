@@ -23,8 +23,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/amd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/named-exports.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/named-register.min.js"></script>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
+      <header class="header-fixed">
+
+          <div class="header-limiter">
+        
+            <h1><a href="/"><span>logo</span></a></h1>
+        
+            <nav>
+              <a href="/angular-app">Angular app</a>
+              <a href="/react-app">React app</a>
+            </nav>
+        
+          </div>
+        
+        </header>
     <script>
       System.import('single-spa').then(function (singleSpa) {
 
