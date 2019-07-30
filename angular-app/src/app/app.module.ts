@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DogsComponent } from './dogs.component';
+import { DogsBigComponent } from './dogsBig.component';
+import { DogsSmallComponent } from './dogsSmall.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DogsComponent
+    DogsComponent,
+    DogsBigComponent,
+    DogsSmallComponent
   ],
   imports: [
     BrowserModule,

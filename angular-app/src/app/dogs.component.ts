@@ -8,6 +8,6 @@ export class DogsComponent {
   url = 'https://loremflickr.com/320/240/dog';
 
   getUrl() {
-    return this.url + '?id=' + (Math.random() * 10);
+    return this.url + '?lock=' + (Math.random() * 10);
   }
 }
